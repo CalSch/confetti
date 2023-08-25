@@ -54,7 +54,7 @@ Particle newPart() {
     PI,0,
     float(rand())/(RAND_MAX),float(rand())/(RAND_MAX),
 
-    Color{r,g,b,230},
+    Color{r,g,b,200},
     // float(GetRandomValue(0,100))/100,
     0,
   };
@@ -68,7 +68,7 @@ int main() {
   printf("Hello World!\n");
 
   SetConfigFlags(FLAG_WINDOW_TRANSPARENT);
-  SetTraceLogLevel(0);
+  // SetTraceLogLevel(0);
   InitWindow(WIDTH, HEIGHT, "ribbit");
   SetWindowState(FLAG_WINDOW_UNDECORATED);
   // SetWindowState(FLAG_WINDOW_RESIZABLE);
@@ -79,7 +79,7 @@ int main() {
   SetWindowState(FLAG_WINDOW_UNFOCUSED);
   SetWindowState(FLAG_WINDOW_TOPMOST);
   SetTargetFPS(60);
-  SetWindowPosition(0,0);
+  // SetWindowPosition(0,0);
 
   for (int y=0;y<HEIGHT;y++) {
     for (int x=0;x<WIDTH;x++) {
@@ -127,8 +127,8 @@ int main() {
     BeginDrawing();
 
     ClearBackground(BLANK);
-    DrawText("yo soy raisin", 10, 10, 20, GRAY);
-    DrawText(TextFormat("%dx%d",GetScreenWidth(),GetScreenHeight()),10,55,20,WHITE);
+    //DrawText("yo soy raisin", 10, 10, 20, GRAY);
+    //DrawText(TextFormat("%dx%d",GetScreenWidth(),GetScreenHeight()),10,55,20,WHITE);
 
     for (size_t i=0;i<parts.size();i++) {
       Particle p=parts.at(i);
@@ -153,9 +153,9 @@ int main() {
       DrawRectanglePro({p.x,p.y,abs(PART_WIDTH*sin(p.ry))+1,PART_HEIGHT},{PART_WIDTH/2,PART_HEIGHT/2},p.rz,c);
     }
 
-    DrawFPS(10,10);
+    //DrawFPS(10,10);
 
-    DrawRectangle(0,0,10,10,WHITE);
+    //DrawRectangle(0,0,10,10,WHITE);
     
     EndDrawing();
     t++;
